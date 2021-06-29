@@ -1,0 +1,9 @@
+.logo img {
+    width: 50%;
+}
+
+.search-bar {
+    border: 1px solid black;
+    padding: 5px;
+    border-radius: 10px;
+}
