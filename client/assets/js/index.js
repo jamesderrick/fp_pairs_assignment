@@ -1,6 +1,18 @@
 let searchBtn = document.querySelector('#search');
-searchBtn.addEventListener('click', (event) => {
+
+searchBtn.onclick = function(event){
     let textInput = document.querySelector('#text-input');
-    let link = document.querySelector('button a');
-    link.href = `search?q=${textInput.value}`;
-})
+    if (textInput.value) {
+        location.href = `search?q=${textInput.value.toLowerCase()}`;
+    }
+}
+    
+document.addEventListener("keyup", function(event) {
+    if (event.keyCode === 13) {
+        let textInput = document.querySelector('#text-input');
+        if (textInput.value) {
+            event.preventDefault();
+            searchBtn.click();
+        }
+    }
+});

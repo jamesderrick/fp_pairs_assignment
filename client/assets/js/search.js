@@ -8,7 +8,7 @@ async function getData(searchTerm) {
     try {
         let response = await fetch(`http://localhost:3000/search/${searchTerm}`);
         let json = await response.json();
-        updateUI([json]);
+        updateUI(json.results);
     } catch (err) {
         console.log(err);
     }
@@ -17,9 +17,20 @@ async function getData(searchTerm) {
 function updateUI(results) {
     let resultsList = document.getElementById('resultsList')
     results.forEach(result => {
-        console.log(result);
         let listItem = document.createElement('li');
-        listItem.innerText = result.searchTerm;
+        let site = document.createElement('div');
+        let title = document.createElement('h3');
+        let content = document.createElement('p');
+        let link = document.createElement('a');
+
+        link.innerText = result.title;
+        link.href = result.url;
+        title.append(link);
+        content.innerText = result.content;
+        site.appendChild(title);
+        site.appendChild(content);
+
+        listItem.append(site);
         resultsList.append(listItem);
     });
 }
