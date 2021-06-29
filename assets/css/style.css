@@ -1,9 +1,30 @@
+.logo {
+    text-align: center;
+}
+
 .logo img {
     width: 50%;
+    margin: auto;
 }
 
 .search-bar {
     border: 1px solid black;
-    padding: 5px;
+    padding: 10px;
     border-radius: 10px;
+    width: 50%;
+    margin: auto;
+}
+
+.search-bar input {
+    width: 90%;
+    border: none;
+    padding: 5px;
+}
+
+.search-bar input:focus {
+    outline: none;
+}
+
+.search-contain {
+    text-align: center;
 }
