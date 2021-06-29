@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="shortcut icon" href="assets/img/Google-favicon-2015.png" type="image/x-icon">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <script defer src="assets/js/index.js"></script>
 </head>
 <body>
     <div class="logo">
@@ -16,10 +17,14 @@
     <div class="search-contain">
         <div class="search-bar">
             <i class="fas fa-search"></i>
-            <input>
+            <input id="text-input">
         </div>
-        <button>Search</button>
-        <button>I'm Feeling Lucky</button>
+        <button id="search">
+            <a href="/search?q=">
+                Search
+            </a>
+        </button>
+        <button id="randomSearch">I'm Feeling Lucky</button>
     </div>
 </body>
 </html>
