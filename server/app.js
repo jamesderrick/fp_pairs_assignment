@@ -35,6 +35,21 @@ const searchResults = [
     }
 ]
 
+const imageResults = [
+    {
+        url: "assets/img/images/test.jpeg",
+        name: "Test 1"
+    },
+    {
+        url: "assets/img/images/test.jpeg",
+        name: "Test 2"
+    },
+    {
+        url: "assets/img/images/test.jpeg",
+        name: "Test 3"
+    }
+]
+
 app.use(cors());
 
 app.get('/', (req,res) => {
@@ -57,6 +72,10 @@ app.get('/search/:searchTerm', (req, res) => {
     res.send({results})
 })
 
+app.get('/images', (req, res) => {
+    res.send(JSON.stringify(imageResults));
+})
+
 app.listen(3000, () => {
     console.log("server up and running on port 3000")
 })
@@ -64,4 +83,4 @@ app.listen(3000, () => {
 function getRandomUrl () {
     let random = Math.floor(Math.random() * (searchResults.length));
     return searchResults[random].url
-  }
+}

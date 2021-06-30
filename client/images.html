@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Google - Search Results</title>
+    <title>Google - Image Results</title>
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="shortcut icon" href="assets/img/Google-favicon-2015.png" type="image/x-icon">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
-    <script defer src="assets/js/search.js"></script>
+    <script defer src="assets/js/image.js"></script>
 </head>
 <body>
     <div class="main">
@@ -35,35 +35,21 @@
                     <div id="all">
                         <i class="fas fa-search"></i>
                         <p>All</p>
-                        <div class="indicator active"></div>
-                    </div>
-                </a>
-                <a href="images.html">
-                    <div id="images">
-                        <i class="fas fa-image"></i>
-                        <p>Images</p>
                         <div class="indicator"></div>
                     </div>
                 </a>
+                <div id="images">
+                    <i class="fas fa-image"></i>
+                    <p>Images</p>
+                    <div class="indicator active"></div>
+                </div>
             </div>
         </header>
-        <div class="body">
-            <p id="results-count"><i>Number of search results:</i></p>
-            <div class="below_card">
-            </div>
-            <div id="results">
-                <!-- Results added here by API -->
-            </div>
-        </div>
+
     </div>
 
+    <section id="image-section" class="flex-grid-thirds">
+    </section>
 
-    <!-- <footer style="position: bottom; display: block;">
-        <div class="top_footer">
-            <p>Location <span>UK</span> - Location</p>
-        </div>
-    </footer> -->
-
-    
-</body>
+    </body>
 </html>
