@@ -32,7 +32,25 @@ const searchResults = [
         title: "ABC News – Breaking News, Latest News, Headlines & Videos",
         content: "Your trusted source for breaking news, analysis, exclusive interviews, headlines, and videos at ABCNews.com.",
         keywords: "news,world,international"
-    }
+    },
+    {
+        url: "https://edition.cnn.com",
+        title: "CNN International - Breaking News, US News, World News ...",
+        content: "Find the latest breaking news and information on the top stories, weather, business, entertainment, politics, and more. For in-depth coverage, CNN provides ...",
+        keywords: "news,world,international"
+    },
+    {
+        url: "https://www.itv.com",
+        title: "ITV Hub - The Home of ITV",
+        content: "ITV Hub - the new home of ITV Player, ITV on demand and live TV. It's all of ITV in one place so you can sneak peek upcoming Premieres, watch Box Sets, series ...",
+        keywords: "news,tv,sport"
+    },
+    {
+        url: "https://www.battersea.org.uk",
+        title: "Battersea Dogs & Cats Home",
+        content: "Battersea Is Here For Every Dog And Cat, And Has Been Since 1860. We Believe That Every Dog And Cat Deserves The Best.",
+        keywords: "dog,cat,adopt,pet"
+    },
 ]
 
 const imageResults = [
