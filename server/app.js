@@ -56,15 +56,18 @@ const searchResults = [
 const imageResults = [
     {
         url: "assets/img/images/test.jpeg",
-        name: "Test 1"
+        name: "Test 1",
+        keywords: "test"
     },
     {
-        url: "assets/img/images/test.jpeg",
-        name: "Test 2"
+        url: "assets/img/images/football.jpeg",
+        name: "Test 2",
+        keywords: "test,football"
     },
     {
-        url: "assets/img/images/test.jpeg",
-        name: "Test 3"
+        url: "assets/img/images/cat.jpeg",
+        name: "Test 3",
+        keywords: "test,cat"
     }
 ]
 
@@ -90,8 +93,15 @@ app.get('/search/:searchTerm', (req, res) => {
     res.send({results})
 })
 
-app.get('/images', (req, res) => {
-    res.send(JSON.stringify(imageResults));
+app.get('/images/:searchTerm', (req, res) => {
+    let searchTerm = req.params.searchTerm;
+
+    const results = imageResults.filter(pic => {
+        if (pic.name.toLowerCase().includes(searchTerm) || pic.keywords.includes(searchTerm)) {
+            return pic
+        }
+    })    
+    res.send(results)
 })
 
 // app.listen(3000, () => {

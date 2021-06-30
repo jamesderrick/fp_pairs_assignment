@@ -15,7 +15,7 @@ getData();
 
 async function getData() {
     try {
-        let response = await fetch(`http://localhost:3000/images`);
+        let response = await fetch(`http://localhost:3000/images/${searchTerm}`);
         let json = await response.json();
         updateUI(json);
     } catch (err) {
