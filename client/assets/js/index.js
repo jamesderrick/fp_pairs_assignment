@@ -16,3 +16,21 @@ document.addEventListener("keyup", function(event) {
         }
     }
 });
+
+
+let randomSearch = document.querySelector('#randomSearch');
+randomSearch.onclick = function (event) {
+    getRandom();
+}
+
+async function getRandom() {
+    try {
+        let response = await fetch(`http://localhost:3000/search/random`);
+        let url = await response.text();
+        console.log(url)
+        window.location.href = url;
+    } catch (err) {
+        console.log(err);
+    }
+}
+

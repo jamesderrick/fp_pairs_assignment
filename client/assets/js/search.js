@@ -25,6 +25,8 @@ function updateUI(results) {
 
         link.innerText = result.title;
         link.href = result.url;
+        link.target = "_blank"
+        
         title.append(link);
         content.innerText = result.content;
         site.appendChild(title);

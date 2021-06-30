@@ -41,6 +41,11 @@ app.get('/', (req,res) => {
     res.send(JSON.stringify(searchResults));
 })
 
+app.get('/search/random', (req,res) => {
+    let url = getRandomUrl()
+    res.send(url);
+})
+
 app.get('/search/:searchTerm', (req, res) => {
     let searchTerm = req.params.searchTerm;
 
@@ -55,3 +60,8 @@ app.get('/search/:searchTerm', (req, res) => {
 app.listen(3000, () => {
     console.log("server up and running on port 3000")
 })
+
+function getRandomUrl () {
+    let random = Math.floor(Math.random() * (searchResults.length));
+    return searchResults[random].url
+  }
