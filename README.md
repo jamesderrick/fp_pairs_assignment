@@ -13,7 +13,7 @@ Usage
 A. Start The backend server
 1. Open a new terminal instance 
 2. Navigate into the server folder
-3. Run nodemon app.js (if installed)
+3. Run npm start
   - console will log that the server is running
   - localhost:3000 can be visited
 

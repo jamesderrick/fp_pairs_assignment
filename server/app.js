@@ -94,11 +94,13 @@ app.get('/images', (req, res) => {
     res.send(JSON.stringify(imageResults));
 })
 
-app.listen(3000, () => {
-    console.log("server up and running on port 3000")
-})
+// app.listen(3000, () => {
+//     console.log("server up and running on port 3000")
+// })
 
 function getRandomUrl () {
     let random = Math.floor(Math.random() * (searchResults.length));
     return searchResults[random].url
 }
+
+module.exports = app;
