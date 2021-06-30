@@ -46,10 +46,10 @@ C. Using the application
 
 ########### BUGS / OUTSTANDING DEV ###########
 
-[] Add header to home page
-[] Add footers
-[] Add more test images
-[] Hook up url search bar on image page
-[] Retain search parameter when switching between all and images
-[] Image search filtered on query string
+[x] Add header to home page
+[x] Add footers
+[x] Add more test images
+[x] Hook up url search bar on image page
+[x] Retain search parameter when switching between all and images
+[x] Image search filtered on query string
 [] Make search icon a button
