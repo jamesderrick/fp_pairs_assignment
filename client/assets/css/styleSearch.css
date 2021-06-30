@@ -1,0 +1,146 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    line-height: 1.4;
+}
+.main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* Header */
+
+header {
+    position: fixed;
+    top: 0;
+    height: 120px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: space-between;
+    overflow: hidden;
+    padding: 5px 20px;
+    border-bottom: 0.5px solid #ccc;
+    background-color: white;
+}
+
+
+/* Top Header */
+
+.top_header {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+.top_header #right_icons {
+    margin-left: auto;
+}
+.top_header img {
+    width: 110px;
+    margin-right: 50px;
+}
+
+#search_bar {
+    position: relative;
+}
+#search_bar input {
+    width: 750px;
+    height: 40px;
+    border-radius: 50px;
+    border: 1px solid gray;
+}
+
+#search_bar .fa-search {
+    position: absolute;
+    right: 30px;
+    top: 12px;
+}
+
+
+#right_icons a {
+    text-decoration: none;
+    color: white;
+    background: #4285F4;
+    padding: 5px 10px;
+}
+
+
+/* Bottom Header */
+
+.bottom_header {
+    margin-left: 170px;
+    margin-top: 20px;
+    width: 88%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    
+}
+
+
+/* Body */
+
+.body {
+    width: 100%;
+    margin-top: 130px;
+    padding-left: 190px;
+    padding-right: 450px;
+}
+
+/* First Card */
+
+.text_with_arrow_down {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+.text_with_arrow_down > p {
+    padding-right: 15px;
+}
+.text_with_arrow_down ~ a {
+    text-decoration: none;
+    font-size: 22px;
+    color: #1A0DAB;
+}
+/* Website Title Link */
+
+
+
+.text_with_arrow_down ~ a:hover {
+    border-bottom: 2px solid #1A0DAB;
+}
+/* Underlines title of webpage title */
+
+/* Below the card */
+
+.below_card {
+    color: #ccc;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-right: 22px;
+    margin-bottom: 20px;
+}
+
+.below ol {
+    padding: 20px;
+}
+
+@media (max-width: 800px) {
+    .main {
+        display: none;
+    }
+}
+
+@media screen and (max-width:1022px)
+{
+    #search_bar { display:block }
+}
