@@ -5,6 +5,12 @@ const searchTerm = urlParams.get('q');
 const textInput = document.querySelector('#search');
 textInput.value = searchTerm;
 
+const allLink = document.getElementById('all-link');
+allLink.href = queryString;
+
+const imageLink = document.getElementById('image-link');
+imageLink.href = 'images?q=' + searchTerm;
+
 getData(searchTerm);
 
 async function getData(searchTerm) {

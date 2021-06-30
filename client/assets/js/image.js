@@ -1,10 +1,22 @@
+const queryString = window.location.search;
+const urlParams = new URLSearchParams(queryString);
+const searchTerm = urlParams.get('q');
+
+const textInput = document.querySelector('#search');
+textInput.value = searchTerm;
+
+const allLink = document.getElementById('all-link');
+allLink.href = 'search?q=' + searchTerm
+
+const imageLink = document.getElementById('image-link');
+imageLink.href = queryString;
+
 getData();
 
 async function getData() {
     try {
         let response = await fetch(`http://localhost:3000/images`);
         let json = await response.json();
-        console.log(json);
         updateUI(json);
     } catch (err) {
         console.log(err);
@@ -26,6 +38,14 @@ function updateUI(results) {
         container.append(newImage);
         section.append(container);
 
-        console.log(image.url);
     })
 }
+
+document.addEventListener("keyup", function(event) {
+    if (event.keyCode === 13) {
+        let textInput = document.querySelector('#search');
+        if (textInput.value) {
+            location.href = `images?q=${textInput.value.toLowerCase()}`;
+        }
+    }
+});
