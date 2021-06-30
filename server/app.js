@@ -32,6 +32,42 @@ const searchResults = [
         title: "ABC News – Breaking News, Latest News, Headlines & Videos",
         content: "Your trusted source for breaking news, analysis, exclusive interviews, headlines, and videos at ABCNews.com.",
         keywords: "news,world,international"
+    },
+    {
+        url: "https://edition.cnn.com",
+        title: "CNN International - Breaking News, US News, World News ...",
+        content: "Find the latest breaking news and information on the top stories, weather, business, entertainment, politics, and more. For in-depth coverage, CNN provides ...",
+        keywords: "news,world,international"
+    },
+    {
+        url: "https://www.itv.com",
+        title: "ITV Hub - The Home of ITV",
+        content: "ITV Hub - the new home of ITV Player, ITV on demand and live TV. It's all of ITV in one place so you can sneak peek upcoming Premieres, watch Box Sets, series ...",
+        keywords: "news,tv,sport"
+    },
+    {
+        url: "https://www.battersea.org.uk",
+        title: "Battersea Dogs & Cats Home",
+        content: "Battersea Is Here For Every Dog And Cat, And Has Been Since 1860. We Believe That Every Dog And Cat Deserves The Best.",
+        keywords: "dog,cat,adopt,pet"
+    },
+]
+
+const imageResults = [
+    {
+        url: "assets/img/images/test.jpeg",
+        name: "Test 1",
+        keywords: "test"
+    },
+    {
+        url: "assets/img/images/football.jpeg",
+        name: "Test 2",
+        keywords: "test,football"
+    },
+    {
+        url: "assets/img/images/cat.jpeg",
+        name: "Test 3",
+        keywords: "test,cat"
     }
 ]
 
@@ -39,6 +75,11 @@ app.use(cors());
 
 app.get('/', (req,res) => {
     res.send(JSON.stringify(searchResults));
+})
+
+app.get('/search/random', (req,res) => {
+    let url = getRandomUrl()
+    res.send(url);
 })
 
 app.get('/search/:searchTerm', (req, res) => {
@@ -52,6 +93,24 @@ app.get('/search/:searchTerm', (req, res) => {
     res.send({results})
 })
 
-app.listen(3000, () => {
-    console.log("server up and running on port 3000")
+app.get('/images/:searchTerm', (req, res) => {
+    let searchTerm = req.params.searchTerm;
+
+    const results = imageResults.filter(pic => {
+        if (pic.name.toLowerCase().includes(searchTerm) || pic.keywords.includes(searchTerm)) {
+            return pic
+        }
+    })    
+    res.send(results)
 })
+
+// app.listen(3000, () => {
+//     console.log("server up and running on port 3000")
+// })
+
+function getRandomUrl () {
+    let random = Math.floor(Math.random() * (searchResults.length));
+    return searchResults[random].url
+}
+
+module.exports = app;
